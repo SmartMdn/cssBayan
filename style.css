@@ -1,15 +1,133 @@
 @font-face {
-    font-family: 'Poppins';
+    font-family: 'Poppins-Regular';
     font-style: normal;
     font-weight: 400;
     font-display: swap;
-    src: local('Poppins'), url("fonts/Poppins/Poppins-Regular.ttf");
+    src: local('Poppins-Regular'),
+        url("fonts/Poppins/Poppins-Regular.ttf");
+}
+@font-face {
+    font-family: 'Poppins-Bold';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Poppins-Bold'),
+        url("fonts/Poppins/Poppins-Bold.ttf");
 }
 
-p {
-    font-family: 'Poppins';
+* {
+    font-family: 'Poppins-Regular', sans-serif;
     font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 32px;
+    font-size: 1rem;
+    box-sizing: border-box;
 }
+
+.accor-container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    horiz-align: center;
+    width: 90%;
+}
+
+.accor-item {
+    flex-direction: column;
+    margin-bottom: 1rem;
+    line-height: 1rem;
+    border-radius: 1rem;
+    overflow: hidden;
+
+}
+.accor-item__label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-family: Poppins-Bold, sans-serif;
+    padding: 2% 2% 2% 2%;
+    cursor: pointer;
+    background: rgba(0, 0, 0, .08);
+    transition: background .3s ease-in-out;
+    width: 100%;
+
+
+}
+.accor-item:hover
+{
+    box-shadow: 0 24px 38px rgba(0, 0, 0, 0.14), 0 9px 46px rgba(0, 0, 0, 0.12), 0 11px 15px rgba(0, 0, 0, 0.2);
+    background: #FFFFFF;
+}
+
+.accor-item__radiobutton:checked + .accor-item__label + .accor-body {
+    height: 100px;
+    background: red;
+}
+
+.accor-item__radiobutton:checked + .accor-item__label {
+    background: red;
+}
+
+.accor-item__radiobutton:checked + .accor-item__label .accor-item__icon {
+    transform: rotate(135deg);
+}
+
+/*
+TODO увеличивать размер стрелки при увеличении экрана
+*/
+.accor-item__icon{
+    width: 0.4rem;
+    height: 0.4rem;
+    margin-right: 0.5rem;
+    transform: rotate(45deg);
+    transition: all .3s ease-in-out;
+    border-top: 0.13rem solid #000000;
+    border-right: 0.13rem solid #000000;
+}
+
+.accor-body{
+    margin: 0 auto;
+    height: 0;
+    color: #000000;
+    line-height: 18px;
+    padding: 0 30px;
+    box-sizing: border-box;
+    transition: all .3s ease-in-out;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+.accor-item__radiobutton{
+    display: none;
+}
+
+@media (min-width: 820px){
+    .accor-container {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        horiz-align: center;
+        width: 90%;
+    }
+
+    .accor-item {
+
+    }
+}
+
+@media (min-width: 1920px) {
+    * {
+       font-size: 1.2rem;
+    }
+    .accor-container {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        horiz-align: center;
+        width: 70%;
+    }
+
+    .accor-item {
+        background: rgba(255, 0, 0, 0.08);
+    }
+}
+
+
