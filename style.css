@@ -1,0 +1,186 @@
+@font-face {
+    font-family: 'Poppins-Regular';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Poppins-Regular'),
+        url("fonts/Poppins/Poppins-Regular.ttf");
+}
+@font-face {
+    font-family: 'Poppins-Bold';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: local('Poppins-Bold'),
+        url("fonts/Poppins/Poppins-Bold.ttf");
+}
+
+* {
+    font-family: 'Poppins-Regular', sans-serif;
+    font-style: normal;
+    font-size: 1rem;
+    box-sizing: border-box;
+}
+
+.accor-container {
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    horiz-align: center;
+    transition: background .5s ease-in-out;
+    width: 80%;
+}
+
+.accor-item {
+    flex-direction: column;
+    margin-bottom: 1rem;
+    line-height: 1rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    transition: all .5s ease-in-out;
+    background: rgba(0, 0, 0, .08);
+}
+.accor-item__label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Poppins-Bold, sans-serif;
+    cursor: pointer;
+    transition: all .5s ease-in-out;
+    width: 100%;
+}
+
+.accor-item__label__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 1rem 1rem 1rem;
+}
+
+.accor-item__radiobutton:checked + .accor-item__label .accor-item__label__body {
+    height: 8rem ;
+}
+
+.accor-item__radiobutton:checked + .accor-item__label {
+    background: #FF0055;
+}
+
+.accor-item__radiobutton:checked + .accor-item__label .accor-item__icon {
+    transform: rotate(135deg);
+}
+
+.accor-title {
+    font-family: 'Poppins-Bold', sans-serif;
+}
+
+.accor-item__icon {
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-right: 0.5rem;
+    transform: rotate(45deg);
+    transition: all .5s ease-in-out;
+    border-top: 0.13rem solid #000000;
+    border-right: 0.13rem solid #000000;
+}
+
+.accor-item__label__body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 0;
+    color: #000000;
+    transition: all .5s ease-in-out;
+    overflow: hidden;
+    font-size: 16px;
+}
+
+.accor-item__radiobutton {
+    display: none;
+}
+
+.accor-item__label__body__picture {
+    flex: 1;
+    max-width: 90%;
+    max-height: 100%;
+    display: block;
+    transition: all .5s ease-in-out;
+    margin-bottom: 1rem;
+}
+
+@media (hover: hover) {
+    .accor-item:hover {
+        box-shadow: 0 24px 38px rgba(0, 0, 0, 0.14), 0 9px 46px rgba(0, 0, 0, 0.12), 0 11px 15px rgba(0, 0, 0, 0.2);
+        background: #FF0055;
+    }
+    .accor-item__label:hover .accor-item__label__body {
+        height: 8rem;
+    }
+    .accor-container:hover {
+        background: antiquewhite;
+    }
+    .accor-item__label:hover .accor-item__icon {
+        transform: rotate(135deg);
+    }
+}
+
+@media (min-width: 600px) {
+    * {
+    font-size: 1.3rem;
+    }
+    .accor-container {
+        width: 80%;
+    }
+
+    .accor-item__radiobutton:checked + .accor-item__label .accor-item__label__body {
+        height: 15rem ;
+    }
+    @media (hover: hover) {
+        .accor-item__label:hover .accor-item__label__body {
+            height: 15rem;
+        }
+    }
+    .accor-item__icon {
+        width: 0.6rem;
+        height: 0.6rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    * {
+       font-size: 1.4rem;
+    }
+    .accor-container {
+        width: 80%;
+    }
+
+    .accor-item__radiobutton:checked + .accor-item__label .accor-item__label__body {
+        height: 20rem ;
+    }
+    @media (hover: hover) {
+        .accor-item__label:hover .accor-item__label__body {
+            height: 20rem;
+        }
+    }
+}
+
+@media (min-width: 1999px) {
+    * {
+       font-size: 1.5rem;
+    }
+    .accor-container {
+        width: 80%;
+    }
+
+    .accor-item__radiobutton:checked + .accor-item__label .accor-item__label__body {
+        height: 25rem ;
+    }
+    @media (hover: hover) {
+        .accor-item__label:hover .accor-item__label__body {
+            height: 25rem;
+        }
+    }
+}
