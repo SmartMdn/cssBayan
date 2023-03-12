@@ -37,32 +37,41 @@
     border-radius: 1rem;
     overflow: hidden;
     transition: all .3s ease-in-out;
+    background: rgba(0, 0, 0, .08);
 }
 .accor-item__label {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
     font-family: Poppins-Bold, sans-serif;
-    padding: 1rem 1rem 1rem 1rem;
     cursor: pointer;
-    background: rgba(0, 0, 0, .08);
     transition: all .3s ease-in-out;
     width: 100%;
 }
 
-.accor-item:hover{
+.accor-item__label__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    padding: 1rem 1rem 1rem 1rem;
+}
+
+.accor-item:hover {
     box-shadow: 0 24px 38px rgba(0, 0, 0, 0.14), 0 9px 46px rgba(0, 0, 0, 0.12), 0 11px 15px rgba(0, 0, 0, 0.2);
-}
-
-.accor-item__label:hover
-{
-    background: #FFFFFF;
-
-}
-
-.accor-item__radiobutton:checked + .accor-item__label + .accor-body {
-    height: 20vw;
     background: #FF0055;
+}
+
+.accor-item__label:hover .accor-item__label__body {
+    height: 8rem;
+}
+
+.accor-item__label:hover .accor-item__label__header .accor-item__icon {
+    transform: rotate(135deg);
+}
+
+.accor-item__radiobutton:checked + .accor-item__label .accor-item__label__body {
+    height: 8rem ;
 }
 
 .accor-item__radiobutton:checked + .accor-item__label {
@@ -76,7 +85,7 @@
 /*
 TODO увеличивать размер стрелки при увеличении экрана
 */
-.accor-item__icon{
+.accor-item__icon {
     width: 0.4rem;
     height: 0.4rem;
     margin-right: 0.5rem;
@@ -86,7 +95,7 @@ TODO увеличивать размер стрелки при увеличен�
     border-right: 0.13rem solid #000000;
 }
 
-.accor-body{
+.accor-item__label__body {
     display: flex;
     justify-content: center;
     height: 0;
@@ -97,18 +106,18 @@ TODO увеличивать размер стрелки при увеличен�
     font-size: 16px;
 }
 
-.accor-item__radiobutton{
+.accor-item__radiobutton {
     display: none;
 }
 
-.accor-body__picture {
+.accor-item__label__body__picture {
+    max-width: 90%;
     display: block;
-    max-width: 100%;
     transition: all .3s ease-in-out;
     margin-bottom: 1rem;
 }
 
-@media (min-width: 820px){
+@media (min-width: 600px) {
     .accor-container {
         display: flex;
         flex-direction: column;
@@ -117,12 +126,37 @@ TODO увеличивать размер стрелки при увеличен�
         width: 70%;
     }
 
-    .accor-item {
+    .accor-item__label:hover .accor-item__label__body {
+        height: 15rem;
+    }
 
+    .accor-item__radiobutton:checked + .accor-item__label .accor-item__label__body {
+        height: 15rem ;
     }
 }
 
-@media (min-width: 1920px) {
+@media (min-width: 1200px) {
+    * {
+       font-size: 1.2rem;
+    }
+    .accor-container {
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        horiz-align: center;
+        width: 70%;
+    }
+
+    .accor-item__label:hover .accor-item__label__body {
+        height: 20rem;
+    }
+
+    .accor-item__radiobutton:checked + .accor-item__label .accor-item__label__body {
+        height: 20rem ;
+    }
+}
+
+@media (min-width: 1999px) {
     * {
        font-size: 1.2rem;
     }
@@ -136,5 +170,13 @@ TODO увеличивать размер стрелки при увеличен�
 
     .accor-item {
         background: rgba(255, 0, 0, 0.08);
+    }
+
+    .accor-item__label:hover .accor-item__label__body {
+        height: 25rem;
+    }
+
+    .accor-item__radiobutton:checked + .accor-item__label .accor-item__label__body {
+        height: 25rem ;
     }
 }
