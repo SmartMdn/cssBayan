@@ -27,7 +27,7 @@
     flex-direction: column;
     margin: auto;
     horiz-align: center;
-    width: 90%;
+    width: 70%;
 }
 
 .accor-item {
@@ -36,34 +36,37 @@
     line-height: 1rem;
     border-radius: 1rem;
     overflow: hidden;
-
+    transition: all .3s ease-in-out;
 }
 .accor-item__label {
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-family: Poppins-Bold, sans-serif;
-    padding: 2% 2% 2% 2%;
+    padding: 1rem 1rem 1rem 1rem;
     cursor: pointer;
     background: rgba(0, 0, 0, .08);
-    transition: background .3s ease-in-out;
+    transition: all .3s ease-in-out;
     width: 100%;
-
-
 }
-.accor-item:hover
-{
+
+.accor-item:hover{
     box-shadow: 0 24px 38px rgba(0, 0, 0, 0.14), 0 9px 46px rgba(0, 0, 0, 0.12), 0 11px 15px rgba(0, 0, 0, 0.2);
+}
+
+.accor-item__label:hover
+{
     background: #FFFFFF;
+
 }
 
 .accor-item__radiobutton:checked + .accor-item__label + .accor-body {
-    height: 100px;
-    background: red;
+    height: 20vw;
+    background: #FF0055;
 }
 
 .accor-item__radiobutton:checked + .accor-item__label {
-    background: red;
+    background: #FF0055;
 }
 
 .accor-item__radiobutton:checked + .accor-item__label .accor-item__icon {
@@ -84,11 +87,10 @@ TODO увеличивать размер стрелки при увеличен�
 }
 
 .accor-body{
-    margin: 0 auto;
+    display: flex;
+    justify-content: center;
     height: 0;
     color: #000000;
-    line-height: 18px;
-    padding: 0 30px;
     box-sizing: border-box;
     transition: all .3s ease-in-out;
     overflow: hidden;
@@ -99,13 +101,20 @@ TODO увеличивать размер стрелки при увеличен�
     display: none;
 }
 
+.accor-body__picture {
+    display: block;
+    max-width: 100%;
+    transition: all .3s ease-in-out;
+    margin-bottom: 1rem;
+}
+
 @media (min-width: 820px){
     .accor-container {
         display: flex;
         flex-direction: column;
         margin: auto;
         horiz-align: center;
-        width: 90%;
+        width: 70%;
     }
 
     .accor-item {
@@ -129,5 +138,3 @@ TODO увеличивать размер стрелки при увеличен�
         background: rgba(255, 0, 0, 0.08);
     }
 }
-
-
